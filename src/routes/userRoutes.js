@@ -28,12 +28,13 @@ userRoute.post('/register', validateUser, async (req, res) => {
       email,
       password: hashedPassword,
     };
+
     const insertResult = await addUserToDb(newUser.email, newUser.password);
     console.log('insertResult', insertResult);
     if (insertResult.affectedRows === false) {
       res.status(500).json('Bedos');
     }
-    res.sendStatus(201).json('User created');
+    res.status(201).json('User created');
   } catch (error) {
     console.log();
     res.status(500).json('Nepavyko ipostinti UserRoute /register', error);
