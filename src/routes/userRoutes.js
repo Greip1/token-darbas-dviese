@@ -1,6 +1,10 @@
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const { getAllUsersDB, addUserToDb } = require('../model/usersModel');
+const { getAllUsersDB, addUserToDb, findUserByEmail } = require('../model/usersModel');
+const { jwtSecret } = require('../config');
+const { validateUser } = require('../middleWare');
+
 // -------------------------------
 const userRoute = express.Router();
 
@@ -16,7 +20,7 @@ userRoute.get('/users', async (req, res) => {
   }
 });
 // ------------------------------
-userRoute.post('/register', async (req, res) => {
+userRoute.post('/register', validateUser, async (req, res) => {
   try {
     const { email, password } = req.body;
     const hashedPassword = bcrypt.hashSync(password, 10);
@@ -36,11 +40,25 @@ userRoute.post('/register', async (req, res) => {
   }
 });
 
-//
+// -------------------------------
+
+userRoute.post('/login', validateUser, async (req, res) => {
+  const { email, password } = req.body;
+  const foundUser = await findUserByEmail(email);
+  if (!foundUser) {
+    res.status(400).json('email or password not found (email)');
+    return;
+  }
+  if (!bcrypt.compareSync(password, foundUser.password)) {
+    res.status(400).json('email or password not found (pass)');
+    return;
+  }
+  const payload = { usersId: foundUser.id };
+  const token = jwt.sign(payload, jwtSecret, { expiresIn: '1h' });
+  res.json({ success: true, token });
+});
 
 // -----------------------------
-
-userRoute.post('/register', async (req, res) => {});
 
 // ----------------------------
 module.exports = userRoute;
