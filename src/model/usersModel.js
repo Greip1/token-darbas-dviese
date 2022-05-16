@@ -34,7 +34,16 @@ async function getAllUsersDB() {
   const sql = 'SELECT * FROM users';
   return duomenuSiuntimasGavimasIsDb(sql, []);
 }
+// -----------------------------
+async function addUserToDb(email, password) {
+  const sql = `
+    INSERT INTO users(email, password)
+    VALUES (?, ?)
+    `;
+  return duomenuSiuntimasGavimasIsDb(sql, [email, password]);
+}
 
 module.exports = {
   getAllUsersDB,
+  addUserToDb,
 };
