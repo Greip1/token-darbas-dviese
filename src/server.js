@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const { PORT } = require('./config');
+const userRoute = require('./routes/userRoutes');
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
 
-// app.use('/', userRoute);
+app.use('/', userRoute);
 
 // first miidlewear helper
 
