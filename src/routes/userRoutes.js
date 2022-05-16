@@ -3,6 +3,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const { getAllUsersDB, addUserToDb, findUserByEmail } = require('../model/usersModel');
 const { jwtSecret } = require('../config');
+const { validateUser } = require('../middleWare');
 
 // -------------------------------
 const userRoute = express.Router();
@@ -19,7 +20,7 @@ userRoute.get('/users', async (req, res) => {
   }
 });
 // ------------------------------
-userRoute.post('/register', async (req, res) => {
+userRoute.post('/register', validateUser, async (req, res) => {
   try {
     const { email, password } = req.body;
     const hashedPassword = bcrypt.hashSync(password, 10);
@@ -41,7 +42,7 @@ userRoute.post('/register', async (req, res) => {
 
 // -------------------------------
 
-userRoute.post('/login', async (req, res) => {
+userRoute.post('/login', validateUser, async (req, res) => {
   const { email, password } = req.body;
   const foundUser = await findUserByEmail(email);
   if (!foundUser) {
