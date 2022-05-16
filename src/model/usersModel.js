@@ -1,20 +1,6 @@
 const mysql = require('mysql2/promise');
 const { dbConfig } = require('../config');
 
-// ----------------------------
-// async function getArryFromDB(sql) {
-//   let conn;
-//   try {
-//     conn = await mysql.createConnection(dbConfig);
-//     const [rezult] = await conn.execute(sql, []);
-//     return rezult;
-//   } catch (error) {
-//     console.log('Klaida getArryFromDB', error);
-//     throw new Error('Klaida getArryFromDB');
-//   } finally {
-//     conn?.end();
-//   }
-// }
 // --------------------------
 async function duomenuSiuntimasGavimasIsDb(sql, dataToDBArr) {
   let conn;

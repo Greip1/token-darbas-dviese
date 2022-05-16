@@ -1,5 +1,5 @@
 const formEl = document.getElementById('register');
-const baseUrl = 'http://localhost:3000/register';
+const baseUrl = 'http://localhost:3000';
 
 const errroEl = document.getElementById('err');
 
@@ -35,7 +35,7 @@ function handleError(msg) {
 
 async function registerFetch(email, password) {
   const registerObj = { email, password };
-  const resp = await fetch(baseUrl, {
+  const resp = await fetch(`${baseUrl}/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
