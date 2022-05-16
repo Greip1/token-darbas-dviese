@@ -1,0 +1,13 @@
+GET http://localhost:3000/
+###
+
+GET http://localhost:3000/users
+###-------------------------------------------
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{    
+    "email": "ona@xxx.lt",
+    "password": "123456"
+    }
