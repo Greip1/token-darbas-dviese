@@ -20,7 +20,7 @@ articlesRoutes.get('/articles', validateToken, async (req, res) => {
   }
 });
 // ------------------------------------ post /articles
-articlesRoutes.post('/articles', async (req, res) => {
+articlesRoutes.post('/articles', validateToken, async (req, res) => {
   try {
     const newArticleObj = req.body;
     const createArticleResult = await postAllArticlesDB(newArticleObj);

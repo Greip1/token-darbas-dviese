@@ -18,7 +18,7 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {    
-    "email": "ona@xxx.lt",
+    "email": "gabriele@xxx.lt",
     "password": "123456"
     }
 
@@ -35,7 +35,7 @@ POST http://localhost:3000/articles
 Content-Type: application/json
 
 {    
-    "date": "2016",
+    "date": "2014",
     "title": "New article 3",
     "content": "Article content 3"
     }
