@@ -31,7 +31,7 @@ userRoute.post('/register', validateUser, async (req, res) => {
 
     const insertResult = await addUserToDb(newUser.email, newUser.password);
     console.log('insertResult', insertResult);
-    if (insertResult.affectedRows === false) {
+    if (insertResult === false) {
       res.status(500).json('Bedos');
       return;
     }
