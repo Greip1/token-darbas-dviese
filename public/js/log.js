@@ -26,12 +26,10 @@ formEl.addEventListener('submit', async (event) => {
     errroEl.textContent = '';
 
     const { token } = dataInJs;
-    localStorage.setItem('bookUserToken', token);
+    localStorage.setItem('articlesToken', token);
 
-    // window.location.replace('index.html');
-  }
-  //  ====================================================================
-  else {
+    window.location.replace('index.html');
+  } else {
     console.log('login fail');
     handleError(dataInJs);
   }
