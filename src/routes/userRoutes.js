@@ -33,11 +33,12 @@ userRoute.post('/register', validateUser, async (req, res) => {
     console.log('insertResult', insertResult);
     if (insertResult.affectedRows === false) {
       res.status(500).json('Bedos');
+      return;
     }
     res.status(201).json('User created');
   } catch (error) {
-    console.log();
-    res.status(500).json('Nepavyko ipostinti UserRoute /register', error);
+    console.log(error);
+    res.status(500).json('Nepavyko ipostinti UserRoute /register');
   }
 });
 
