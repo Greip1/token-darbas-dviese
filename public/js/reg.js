@@ -6,18 +6,41 @@ const errroEl = document.getElementById('err');
 const emailErr = document.getElementById('emailError');
 const passErr = document.getElementById('passError');
 
+formEl.elements.password.addEventListener('change', (e) => {
+  e.preventDefault();
+  console.log(formEl.elements.password.value.length);
+  if (formEl.elements.password.value.length < 6) {
+    formEl.elements.password.style.backgroundColor = 'red';
+  } else {
+    formEl.elements.password.style.backgroundColor = 'green';
+  }
+});
+
+// document.body.addEventListener('blur', (q) => {
+//   q.preventDefault();
+//   console.log(q.target);
+//   formEl.elements.password.addEventListener('input', (e) => {
+//     e.preventDefault();
+//     console.log(formEl.elements.password.value.length);
+//     if (formEl.elements.password.value.length < 6) {
+//       formEl.elements.password.style.backgroundColor = 'red';
+//     } else {
+//       formEl.elements.password.style.backgroundColor = 'green';
+//     }
+//   });
+//   formEl.elements.password.style.backgroundColor = 'blue';
+// });
+
 formEl.addEventListener('submit', async (event) => {
   event.preventDefault();
-  console.log('js submit form');
+  // console.log('js submit form');
 
   const regObj = {
     email: formEl.elements.email.value.trim(),
     password: formEl.elements.password.value.trim(),
     repPassword: formEl.elements.repeat_password.value.trim(),
   };
-  if (
-    formEl.elements.password.value.trim() !== formEl.elements.repeat_password.value.trim()
-  ) {
+  if (formEl.elements.password.value.trim() !== formEl.elements.repeat_password.value.trim()) {
     handleError('data incorrect: password error');
     return;
   }
