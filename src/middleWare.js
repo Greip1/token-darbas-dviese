@@ -1,4 +1,7 @@
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
+const { jwtSecret } = require('./config');
+
 // ------------------------------------------------------
 async function validateUser(req, res, next) {
   // validuoti gauta email ir password
@@ -18,7 +21,37 @@ async function validateUser(req, res, next) {
     res.status(400).json(error.details);
   }
 }
-
+// -------------------------------------------------------- Token
+async function validateToken(req, res, next) {
+  console.log('req.headers', req.headers);
+  const tokenFromHeaders = req.headers.authorization?.split(' ')[1];
+  // nera tokeno
+  if (!tokenFromHeaders) {
+    res.status(401).json({
+      success: false,
+      error: 'nera tokeno',
+    });
+    return;
+  }
+  // tokenas yra
+  try {
+    const tokenPayload = jwt.verify(tokenFromHeaders, jwtSecret);
+    console.log('tokenPayload', tokenPayload);
+    const usersId = tokenPayload.usersId;
+    // budas perduoti userId i tolimesne funkcija
+    req.usersId = usersId;
+    next();
+  } catch (error) {
+    console.log(error);
+    res.status(403).json({
+      success: false,
+      error: 'blogas tokenas',
+    });
+  }
+}
+// ---------------------------------------------------------
+// --------------------------------------------------------
 module.exports = {
   validateUser,
+  validateToken,
 };

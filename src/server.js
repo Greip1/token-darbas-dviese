@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const { PORT } = require('./config');
 const userRoute = require('./routes/userRoutes');
+const articlesRoutes = require('./routes/articlesRoutes');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(morgan('dev'));
 app.use(cors());
 
 app.use('/', userRoute);
+app.use('/', articlesRoutes);
 
 // first miidlewear helper
 

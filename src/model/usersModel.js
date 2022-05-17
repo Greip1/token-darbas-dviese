@@ -45,9 +45,25 @@ async function findUserByEmail(email) {
     conn?.end();
   }
 }
+// ---------------------------------------------Articles
+async function getAllArticlesDB() {
+  const sql = 'SELECT * FROM articles';
+  return duomenuSiuntimasGavimasIsDb(sql, []);
+}
 // ---------------------------------------------
+async function postAllArticlesDB(insObj) {
+  const { date, title, content } = insObj;
+  const sql = `
+    INSERT INTO articles(date, title, content)
+    VALUES (?, ?, ?)
+    `;
+  return duomenuSiuntimasGavimasIsDb(sql, [date, title, content]);
+}
+// -------------------------------------------
 module.exports = {
   getAllUsersDB,
   addUserToDb,
   findUserByEmail,
+  getAllArticlesDB,
+  postAllArticlesDB,
 };
