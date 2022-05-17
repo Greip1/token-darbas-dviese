@@ -28,7 +28,7 @@ formEl.addEventListener('submit', async (event) => {
     const { token } = dataInJs;
     localStorage.setItem('bookUserToken', token);
 
-    window.location.replace('index.html');
+    // window.location.replace('index.html');
   }
   //  ====================================================================
   else {
