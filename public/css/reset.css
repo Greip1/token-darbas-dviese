@@ -20,7 +20,9 @@ ol {
 img {
   max-width: 100%;
 }
-
+input{
+  /* border-style: solid; */
+}
 p,
 h1,
 h2,
