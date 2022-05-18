@@ -32,13 +32,31 @@ body {
   padding: 30px;
   border-radius: 10px;
 }
-input {
+.image2-container {
+  background: url(https://placeimg.com/640/480/tech) no-repeat;
+  background-size: cover;
+  width: 100%;
+  /* border-top-right-radius: ; */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.login2-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+input,textarea {
   margin-bottom: 10px;
   margin-top: 10px;
   padding: 5px;
   width: 100%;
   border-color: var(--main-color);
   border-radius: 5px;
+}
+textarea {
+  border: inset 2px;
+  border-color: var(--main-color);
+
 }
 h1 {
   text-align: center;
