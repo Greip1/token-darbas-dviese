@@ -10,10 +10,15 @@ formEl.elements.password.addEventListener('change', (e) => {
   e.preventDefault();
   console.log(formEl.elements.password.value.length);
   if (formEl.elements.password.value.length < 6) {
-    formEl.elements.password.style.backgroundColor = 'red';
+    formEl.elements.password.style.backgroundColor = 'rgb(224, 89, 93)';
   } else {
-    formEl.elements.password.style.backgroundColor = 'green';
+    formEl.elements.password.style.backgroundColor = 'rgb(143, 231, 143)';
   }
+  // if (formEl.elements.repeat_password.value.length < 6) {
+  //   formEl.elements.repeat_password.style.backgroundColor = 'rgb(224, 89, 93)';
+  // } else {
+  //   formEl.elements.repeat_password.style.backgroundColor = 'rgb(143, 231, 143)';
+  // }
 });
 
 // document.body.addEventListener('blur', (q) => {
