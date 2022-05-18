@@ -5,17 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Articles</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
-    />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css" /> -->
     <script type="module" src="./js/index.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <h1>Here are all articles</h1>
+    <div class="article-container">
+      <h1>Here are all articles</h1>
+      <div class="card-grd-container">
+        <h3>Loading.........</h3>
+        <!-- <div class="card">
+          <h5>2005</h5>
+          <h4>Title</h4>
+          <p>Content</p>
+        </div> -->
+      </div>
 
-    <ul id="list"></ul>
+      <!-- <ul id="list"></ul> -->
 
-    <button><a href="./postArt.html">Create new article</a></button>
+      <button class="btn create-article-btn">
+        <a href="./postArt.html">Create new article</a>
+      </button>
+    </div>
   </body>
 </html>
