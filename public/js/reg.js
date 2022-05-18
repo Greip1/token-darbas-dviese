@@ -44,6 +44,10 @@ formEl.addEventListener('submit', async (event) => {
     handleError('data incorrect: password error');
     return;
   }
+  if (formEl.elements.email.value.length < 5) {
+    handleError('data incorrect: incorect email');
+    return;
+  }
   if (formEl.elements.password.value.length < 6) {
     handleError('data incorrect: password is too short');
     return;

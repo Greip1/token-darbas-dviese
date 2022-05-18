@@ -43,10 +43,10 @@ function articleString() {
 async function addArticle(newArticle) {
   const resp = await fetch('http://localhost:3000/articles', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', authorization: `Bearer ${token} ` },
     body: JSON.stringify(newArticle),
   });
   const atsinJs = await resp.json();
   console.log(atsinJs);
-  // window.location.href = 'index.html';
+  window.location.href = 'index.html';
 }
