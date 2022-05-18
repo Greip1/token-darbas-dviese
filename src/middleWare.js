@@ -23,7 +23,7 @@ async function validateUser(req, res, next) {
 }
 // -------------------------------------------------------- Token
 async function validateToken(req, res, next) {
-  console.log('req.headers', req.headers);
+  // console.log('req.headers', req.headers);
   const tokenFromHeaders = req.headers.authorization?.split(' ')[1];
   // nera tokeno
   if (!tokenFromHeaders) {
@@ -36,7 +36,7 @@ async function validateToken(req, res, next) {
   // tokenas yra
   try {
     const tokenPayload = jwt.verify(tokenFromHeaders, jwtSecret);
-    console.log('tokenPayload', tokenPayload);
+    // console.log('tokenPayload', tokenPayload);
     const usersId = tokenPayload.usersId;
     // budas perduoti userId i tolimesne funkcija
     req.usersId = usersId;
