@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <script src="./js/reg.js" defer></script>
+    <script type="module" src="./js/reg.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -21,17 +21,15 @@
         <h1>Register here</h1>
         <form id="register">
           <h3 id="err"></h3>
-          <label for="email"
-            ><i class="fa fa-envelope" aria-hidden="true"></i> Your email
-          </label>
-          <div id="emailError"></div>
-          <input type="email" name="email" placeholder="Email" /><br />
-          <label for="password"
-            ><i class="fa fa-lock" aria-hidden="true"></i> Your password</label
-          >
-          <div id="passError"></div>
+          <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Your email </label>
+          <!-- <div id="emailError"></div> -->
+          <input type="email" name="email" placeholder="Email" />
+          <p class="error-msg"></p>
+          <label for="password"><i class="fa fa-lock" aria-hidden="true"></i> Your password</label>
+          <!-- <div id="passError"></div> -->
 
-          <input type="password" name="password" placeholder="Password" /><br />
+          <input type="password" name="password" placeholder="Password" />
+          <p class="error-msg"></p>
           <label for="repeat_password"
             ><i class="fa fa-lock" aria-hidden="true"></i> Repeat password</label
           ><br />
