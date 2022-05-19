@@ -35,7 +35,7 @@ POST http://localhost:3000/articles
 Content-Type: application/json
 
 {    
-    "date": "2014",
-    "title": "New article 3",
-    "content": "Article content 3"
+    "date": "2012",
+    "title": "New article 4",
+    "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa itaque quam soluta? Culpa dicta quibusdam nisi quas repellendus sequi ducimus magnam quo temporibus quaerat modi iusto molestiae reprehenderit, fugiat ad."
     }
