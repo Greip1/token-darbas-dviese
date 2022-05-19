@@ -1,0 +1,163 @@
+@import 'reset.css';
+
+:root {
+  --main-color: rgb(200, 155, 106);
+}
+body {
+  background-color: rgb(238, 230, 219);
+}
+
+/* register html========================== */
+.flex-grid-container {
+  grid-template-columns: 1fr 1fr;
+}
+.main-container {
+  box-shadow: rgba(86, 60, 15, 0.56) 0px 22px 70px 4px;
+  display: grid;
+  max-width: 700px;
+  margin: 15% auto;
+  border-radius: 10px;
+}
+
+.image-container {
+  background: url(https://placeimg.com/640/480/tech) no-repeat;
+  background-size: cover;
+  width: 100%;
+  /* border-top-right-radius: ; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+.image2-container {
+  background: url(https://placeimg.com/640/480/tech) no-repeat;
+  background-size: cover;
+  width: 100%;
+  /* border-top-right-radius: ; */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.login2-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+input,textarea {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 100%;
+  border-color: var(--main-color);
+  border-radius: 5px;
+}
+textarea {
+  border: inset 2px;
+  border-color: var(--main-color);
+
+}
+h1 {
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+h3 {
+  margin-bottom: 10px;
+  font-size: 15px;
+  padding-top: 7px;
+}
+.btn {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  background-color: var(--main-color);
+  border: navajowhite;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.login-btn-container {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.login-btn {
+  border: none;
+  background-color: #fff;
+  color: var(--main-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+/* logint html =============== */
+.login-container {
+  background-color: #fff;
+  max-width: 500px;
+  padding: 20px 40px;
+}
+
+/* create artcl html */
+
+.btn-cancel {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  /* background-color: var(--main-color); */
+  border: navajowhite;
+  padding: 8px 30px;
+  border-radius: 5px;
+  color: var(--main-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+  float: right;
+  border: 2px solid var(--main-color);
+}
+/* Index.html===================================================== */
+.card-grd-container {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.card {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 7px;
+  padding: 15px;
+  text-align: center;
+  /* height: 120px; */
+  /* overflow: hidden; */
+}
+
+.card:hover {
+  overflow: initial;
+  height: auto;
+  /* transform: scale(1, 1.5); */
+}
+
+.article-container {
+  box-shadow: rgba(86, 60, 15, 0.56) 0px 22px 70px 4px;
+  background-color: #fff;
+  max-width: 700px;
+  margin: 15% auto;
+  border-radius: 10px;
+}
+.create-article-btn {
+  margin: 25px;
+}
+.year,
+.title,
+.content {
+  margin-bottom: 10px;
+}
+.title {
+  color: var(--main-color);
+  font-size: 18px;
+  font-style: italic;
+}
+.content {
+  font-size: 12px;
+}
+.article-container h1 {
+  padding-top: 35px;
+}

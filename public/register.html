@@ -8,27 +8,45 @@
     <script src="./js/reg.js" defer></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div style="float: right">
-      <h3>Already registered?</h3>
-      <button><a href="./login.html">Log in here </a></button>
-    </div>
-    <h1>Register here</h1>
-    <form id="register">
-      <h3 id="err"></h3>
-      <label for="email">Your email</label>
-      <div id="emailError"></div>
-      <input type="email" name="email" placeholder="Email" />
-      <label for="password">Your password</label>
-      <div id="passError"></div>
+    <div class="main-container flex-grid-container">
+      <div class="form-container">
+        <h1>Register here</h1>
+        <form id="register">
+          <h3 id="err"></h3>
+          <label for="email"
+            ><i class="fa fa-envelope" aria-hidden="true"></i> Your email
+          </label>
+          <div id="emailError"></div>
+          <input type="email" name="email" placeholder="Email" /><br />
+          <label for="password"
+            ><i class="fa fa-lock" aria-hidden="true"></i> Your password</label
+          >
+          <div id="passError"></div>
 
-      <input type="password" name="password" placeholder="Password" />
-      <label for="repeat_password">Repeat password</label>
-      <input type="password" name="repeat_password" placeholder="Repeat Password" />
-      <button type="submit">Register</button>
-    </form>
+          <input type="password" name="password" placeholder="Password" /><br />
+          <label for="repeat_password"
+            ><i class="fa fa-lock" aria-hidden="true"></i> Repeat password</label
+          ><br />
+          <input type="password" name="repeat_password" placeholder="Repeat Password" />
+          <br />
+          <button class="btn main-color-btn" type="submit">Register</button>
+          <div class="login-btn-container">
+            <h3>Already registered?</h3>
+            <button class="login-btn" type="button">
+              <a href="./login.html">Log in here! </a>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="image-container"></div>
+    </div>
   </body>
 </html>

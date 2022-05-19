@@ -8,9 +8,9 @@ const token = localStorage.getItem('articlesToken');
 
 const errEl = document.getElementById('err');
 //----------------------------
-// if (!token) {
-//   window.location.replace('login.html');
-// }
+if (!token) {
+  window.location.replace('login.html');
+}
 
 //----------------------------
 
