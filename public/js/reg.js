@@ -9,16 +9,6 @@ const passErr = document.getElementById('passError');
 formEl.elements.password.addEventListener('change', (e) => {
   e.preventDefault();
   console.log(formEl.elements.password.value.length);
-  if (formEl.elements.password.value.length < 6) {
-    formEl.elements.password.style.backgroundColor = 'rgb(224, 89, 93)';
-  } else {
-    formEl.elements.password.style.backgroundColor = 'rgb(143, 231, 143)';
-  }
-  if (formEl.elements.repeat_password.value.length < 6) {
-    formEl.elements.repeat_password.style.backgroundColor = 'rgb(224, 89, 93)';
-  } else {
-    formEl.elements.repeat_password.style.backgroundColor = 'rgb(143, 231, 143)';
-  }
 });
 
 formEl.addEventListener('submit', async (event) => {
@@ -29,21 +19,6 @@ formEl.addEventListener('submit', async (event) => {
     password: formEl.elements.password.value.trim(),
     repPassword: formEl.elements.repeat_password.value.trim(),
   };
-  if (formEl.elements.email.value.length < 5) {
-    handleError('Data incorrect: please check your email');
-    return;
-  }
-  if (
-    formEl.elements.password.value.trim() !== formEl.elements.repeat_password.value.trim()
-  ) {
-    handleError('Data incorrect: password error');
-    return;
-  }
-  if (formEl.elements.password.value.length < 6) {
-    handleError('Data incorrect: password is too short');
-    return;
-  }
-  registerFetch(regObj.email, regObj.password);
 });
 
 function handleError(msgArrErr) {
