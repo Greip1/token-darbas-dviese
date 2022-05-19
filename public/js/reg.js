@@ -61,12 +61,10 @@ formEl.addEventListener('submit', async (event) => {
   //   handleError('Data incorrect: please check your email');
   //   return;
   // }
-  // if (
-  //   formEl.elements.password.value.trim() !== formEl.elements.repeat_password.value.trim()
-  // ) {
-  //   handleError('Data incorrect: password error');
-  //   return;
-  // }
+  if (formEl.elements.password.value.trim() !== formEl.elements.repeat_password.value.trim()) {
+    handleError('Data incorrect: skirtingi slaptaz.');
+    return;
+  }
   // if (formEl.elements.password.value.length < 6) {
   //   handleError('Data incorrect: password is too short');
   //   return;
