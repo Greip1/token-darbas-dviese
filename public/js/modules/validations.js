@@ -36,12 +36,7 @@ export function checkInput(valueToCheck, field, rulesArr) {
         return;
       }
     }
-    // if (rule === 'positive') {
-    //   if (valueToCheck < 0) {
-    //     addError('must be positive', field);
-    //     return;
-    //   }
-    // }
+
     // ------------------------------------------ extra ar yra '.' po @ raide
     // if (rule.split('-')[0] === 'include') {
     //   const check = rule.split('-')[1];

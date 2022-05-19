@@ -5,6 +5,7 @@ const baseUrl = 'http://localhost:3000/login';
 
 const errroEl = document.getElementById('err');
 const emailEl = formEl.elements.email;
+const passEl = formEl.elements.password;
 
 // ----------------------------------------------------------Valid select
 const errorMsgElementsArr = document.querySelectorAll('.error-msg');
@@ -21,6 +22,12 @@ emailEl.addEventListener('input', (event) => {
   clearErrors();
   const el = event.currentTarget;
   checkInput(el.value, el.name, ['required', 'minLength-4', 'email', 'include-@']);
+  handleError(errorsArr);
+});
+passEl.addEventListener('input', (event) => {
+  clearErrors();
+  const el = event.currentTarget;
+  checkInput(el.value, el.name, ['required', 'minLength-5', 'maxLength-10']);
   handleError(errorsArr);
 });
 
